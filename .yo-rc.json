@@ -1,0 +1,6 @@
+{
+  "generator-react-webpack": {
+    "appName": "dibbl",
+    "style": "scss"
+  }
+}
