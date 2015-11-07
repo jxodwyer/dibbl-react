@@ -3,16 +3,23 @@ require('styles/App.css');
 
 import React from 'react';
 
-let yeomanImage = require('../images/yeoman.png');
 
-class SearchComponent extends React.Component {
+var SearchComponent = React.createClass({
   render() {
+    // console.log(this.props.users);
+    // var userNodes = this.props.users.map(function(user){
+    //   return (
+    //     <UserInfo>
+    //       {this.props.children}
+    //     </UserInfo>
+    //   );
+    // });
     return (
       <div className="search">
-        <p>hi</p>
+        {userNodes}
       </div>
     );
   }
-}
+});
 
 export default SearchComponent;
