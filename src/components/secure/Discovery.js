@@ -4,6 +4,9 @@ var Router = require('react-router');
 var Firebase = require('firebase');
 var forge = "https://dibbl.firebaseio.com/"; //YOUR FIREBASE URL HERE
 var ref = new Firebase(forge);
+require('normalize.css');
+require('styles/App.css');
+require('styles/Search.scss');
 
 var Discovery = React.createClass({
   mixins: [Authenticated],
@@ -32,7 +35,7 @@ var Discovery = React.createClass({
     var userBlock = function(index) {
       return (
         <div className="userInfo">
-          <span className="glyphicon glyphicon-heart" aria-hidden="true"></span>
+          <span className="glyphicon glyphicon-heart faveIcon" aria-hidden="true"></span>
           <h5 className="userName">{index.firstname} {index.lastname}</h5>
           <div className="rating">
             <span className="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -48,15 +51,19 @@ var Discovery = React.createClass({
             <span>HTML</span>
           </div>
           <p className="userBio">All this fancy schmancy stuff about this person.</p>
-          <button>CONNECT</button>
+          <button className="connectButton">CONNECT</button>
         </div>
       )
     };
     return (
-      <div>
+      <div id="search">
         <form id="searchForm" onSubmit={this.handleSubmit}>
-          <input type="text" onChange={this.onChange} value={this.state.query}></input>
-          <input type="submit" value="SEARCH"></input>
+          <h2>I'd like to speak to an industry leader about</h2><br />
+          <input id="query" placeholder="fill in the blank" width="100%" className="gray-box" onChange={this.onChange} value={this.state.query} />
+          <h2>for</h2>
+          <input id="query-time" type="number" step="5" min="5" max="20" value="10" width="30px" className="gray-box" />
+          <h2>minutes</h2>
+          <input type="submit" value="GO" className="querySubmit" />
         </form>
         {this.state.searchResults.map(userBlock)}
       </div>
