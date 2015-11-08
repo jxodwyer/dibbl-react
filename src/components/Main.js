@@ -43,7 +43,7 @@ var Main = React.createClass({
             </ul>
           </div>
         </nav>
-        <div className="container">
+        <div className="container" id="page-container">
           <div className="row">
             <RouteHandler />
           </div>

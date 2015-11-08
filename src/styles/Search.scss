@@ -3,9 +3,9 @@
   #searchForm {
     text-align: center;
     padding-top: 20px;
+    margin-bottom: 20px;
     h2 {
       color: #888;
-      margin-bottom: 10px;
       font-size: 14px;
       display:inline-block;
     }
@@ -29,11 +29,12 @@
       padding-right: 5px;
     }
     .querySubmit {
-      width: 100%;
+      width: 100px;
       background-color: #d9e021;
       font-size: 16px;
       margin-top: 10px;
       color: white;
+      margin-left: 20px;
     }
     .querySubmit:hover { background-color: #66cccc; }
   }
@@ -79,5 +80,6 @@
       color: white;
       padding: 10px 20px; }
     .connectButton:hover { background-color: #fbb03b; }
+    .bookLater { text-align: center; width: 100%; }
   }
 }

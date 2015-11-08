@@ -51,7 +51,8 @@ var Discovery = React.createClass({
             <span>HTML</span>
           </div>
           <p className="userBio">All this fancy schmancy stuff about this person.</p>
-          <button className="connectButton">CONNECT</button>
+          <button className="connectButton">CONNECT NOW</button>
+          <p className="bookLater"><a>or, schedule a call for later >></a></p>
         </div>
       )
     };
@@ -62,7 +63,7 @@ var Discovery = React.createClass({
           <input id="query" placeholder="fill in the blank" width="100%" className="gray-box" onChange={this.onChange} value={this.state.query} />
           <h2>for</h2>
           <input id="query-time" type="number" step="5" min="5" max="20" value="10" width="30px" className="gray-box" />
-          <h2>minutes</h2>
+          <h2>minutes.</h2>
           <input type="submit" value="GO" className="querySubmit" />
         </form>
         {this.state.searchResults.map(userBlock)}

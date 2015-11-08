@@ -1,6 +1,6 @@
 /* Base Application Styles */
 *:-webkit-any-link, *:focus { outline: none; }
-
+#page-container { padding: 60px 20px; }
 body { font-family: 'Montserrat', sans-serif; }
 
 h1, h2, h3, h4, h5, h6 { margin: 0 0 0 0; }
@@ -19,11 +19,11 @@ hr { margin: 10px 0; }
 
 textarea { width: 100%; }
 
-.index img {
-  margin: 40px auto;
-  border-radius: 4px;
-  background: #fff;
-  display: block;
+.navbar-default {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .index .notice {
