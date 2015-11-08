@@ -5,7 +5,7 @@ var Firebase = require('firebase');
 var forge = "https://dibbl.firebaseio.com/"; //YOUR FIREBASE URL HERE
 var ref = new Firebase(forge);
 require('normalize.css');
-require('styles/App.css');
+require('styles/App.scss');
 require('styles/Search.scss');
 
 var Discovery = React.createClass({
@@ -22,12 +22,14 @@ var Discovery = React.createClass({
     ref.child('users').on("child_added", function(snapshot){
       var user = snapshot.val();
       var skills = user.skills;
-      if (skills.indexOf(this.state.query) >= 0) {
-        searchResults.push(user);
-        this.setState({
-          searchResults: searchResults,
-          query: ''
-        });
+      if (skills != null) {
+        if (skills.indexOf(this.state.query) >= 0) {
+          searchResults.push(user);
+          this.setState({
+            searchResults: searchResults,
+            query: ''
+          });
+        };
       };
     }.bind(this));
   },

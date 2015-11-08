@@ -5,7 +5,7 @@ var Firebase = require('firebase');
 var forge = "https://dibbl.firebaseio.com/"; //YOUR FIREBASE URL HERE
 var ref = new Firebase(forge);
 require('normalize.css');
-require('styles/App.css');
+require('styles/App.scss');
 require('styles/Account.scss');
 
 var Account = React.createClass({
