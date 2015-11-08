@@ -31,8 +31,24 @@ var Discovery = React.createClass({
   render: function(){
     var userBlock = function(index) {
       return (
-        <div>
-          <h4>{index.firstname} {index.lastname}</h4>
+        <div className="userInfo">
+          <span className="glyphicon glyphicon-heart" aria-hidden="true"></span>
+          <h5 className="userName">{index.firstname} {index.lastname}</h5>
+          <div className="rating">
+            <span className="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span className="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span className="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span className="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <span className="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+          </div>
+          <h5 className="userFee">{index.fee}</h5>
+          <div className="userSkills">
+            <span>JQUERY</span>
+            <span>CSS</span>
+            <span>HTML</span>
+          </div>
+          <p className="userBio">All this fancy schmancy stuff about this person.</p>
+          <button>CONNECT</button>
         </div>
       )
     };
@@ -40,7 +56,7 @@ var Discovery = React.createClass({
       <div>
         <form id="searchForm" onSubmit={this.handleSubmit}>
           <input type="text" onChange={this.onChange} value={this.state.query}></input>
-          <input type="submit"></input>
+          <input type="submit" value="SEARCH"></input>
         </form>
         {this.state.searchResults.map(userBlock)}
       </div>

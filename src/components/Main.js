@@ -37,7 +37,7 @@ var Main = React.createClass({
             </div>
             <ul className="nav navbar-nav pull-right">
               <li><Link to="home" className="navbar-brand"> Home </Link></li>
-              <li><Link to="discovery" className="navbar-brand"> Discovery </Link></li>
+              <li><Link to="discovery" className="navbar-brand"> Find an Expert </Link></li>
               {register}
               {loginOrOut}
             </ul>
