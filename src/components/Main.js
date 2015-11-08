@@ -21,24 +21,28 @@ var Main = React.createClass({
   render: function(){
     var loginOrOut;
     var register;
-    if(this.state.loggedIn){
+    var account;
+    if (this.state.loggedIn){
+      register = null;
+      account = <li><Link to="account" className="navbar-brand">My Account</Link></li>;
       loginOrOut = <li><Link to="logout" className="navbar-brand">Logout</Link></li>;
-      register = null
     } else {
+      account = null;
+      register = <li><Link to="register" className="navbar-brand">Register</Link></li>;
       loginOrOut = <li><Link to="login" className="navbar-brand">Login</Link></li>;
-      register = <li><Link to="register" className="navbar-brand"> Register </Link></li>;
     }
     return (
       <span>
         <nav className="navbar navbar-default navbar-static-top">
           <div className="container">
             <div className="navbar-header">
-              <Link to="home" className="navbar-brand"> DIBBL </Link>
+              <Link to="home" className="navbar-brand">DIBBL</Link>
             </div>
             <ul className="nav navbar-nav pull-right">
-              <li><Link to="home" className="navbar-brand"> Home </Link></li>
-              <li><Link to="discovery" className="navbar-brand"> Find an Expert </Link></li>
+              <li><Link to="home" className="navbar-brand">Home</Link></li>
+              <li><Link to="discovery" className="navbar-brand">Find an Expert</Link></li>
               {register}
+              {account}
               {loginOrOut}
             </ul>
           </div>

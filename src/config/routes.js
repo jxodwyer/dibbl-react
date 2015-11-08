@@ -6,6 +6,7 @@ var Main = require('../components/Main');
 var Register = require('../components/login-register/Register');
 var Login = require("../components/login-register/Login");
 var Logout = require('../components/login-register/Logout');
+var Account = require('../components/secure/Account');
 var Discovery = require('../components/secure/Discovery');
 var Home = require("../components/Home");
 
@@ -14,6 +15,7 @@ var routes = (
     <Route name="login" handler={Login} />
     <Route name="logout" handler={Logout} />
     <Route name="register" handler={Register} />
+    <Route name="account" handler={Account} />
     <Route name="discovery" handler={Discovery} />
     <Route name="home" path="/" handler={Home} />
   </Route>
