@@ -4,31 +4,31 @@ var Router = require('react-router');
 var Firebase = require('firebase');
 var forge = "https://dibbl.firebaseio.com/"; //YOUR FIREBASE URL HERE
 var ref = new Firebase(forge);
-var searchResults = [];
-
 
 var Discovery = React.createClass({
   mixins: [Authenticated],
   getInitialState: function(){
-    return {searchResults: []};
+    return {searchResults: [], query: ''};
   },
-  handleSearch: function(e){
+  onChange: function(e) {
+    this.setState({query: e.target.value});
+  },
+  handleSubmit: function(e){
     e.preventDefault();
-    var query = "computer";
+    var searchResults = [];
     ref.child('users').on("child_added", function(snapshot){
       var user = snapshot.val();
       var skills = user.skills;
-      if (skills.indexOf(query) >= 0) {
+      if (skills.indexOf(this.state.query) >= 0) {
         searchResults.push(user);
-        console.log('1', searchResults);
         this.setState({
           searchResults: searchResults,
+          query: ''
         });
       };
     }.bind(this));
   },
   render: function(){
-    console.log('2', this.state.searchResults);
     var userBlock = function(index) {
       return (
         <div>
@@ -38,8 +38,8 @@ var Discovery = React.createClass({
     };
     return (
       <div>
-        <form id="searchForm" onSubmit={this.handleSearch}>
-          <input type="text"></input>
+        <form id="searchForm" onSubmit={this.handleSubmit}>
+          <input type="text" onChange={this.onChange} value={this.state.query}></input>
           <input type="submit"></input>
         </form>
         {this.state.searchResults.map(userBlock)}
