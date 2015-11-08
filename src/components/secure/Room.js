@@ -8,14 +8,15 @@ class RoomComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {ticker: 0}
+    this.state = {ticker: 0};
     setInterval(this.counter.bind(this), 1000);
   }
 
   counter() {
-    var newTicker = this.state.ticker + 1
-    this.setState({ticker: newTicker})
+    var newTicker = this.state.ticker + 1;
+    this.setState({ticker: newTicker});
   }
+
   componentDidMount() {
     var webrtc = new SimpleWebRTC({
       // the id/element dom element that will hold "our" video
@@ -31,6 +32,7 @@ class RoomComponent extends React.Component {
       webrtc.joinRoom('your awesome room name');
     });
   }
+
   render() {
     return (
       <div className="room-component">

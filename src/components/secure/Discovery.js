@@ -35,6 +35,11 @@ var Discovery = React.createClass({
     }.bind(this));
   },
   render: function(){
+    var skillNodes = function(index) {
+      return (
+        <span>{index}</span>
+      )
+    };
     var userBlock = function(index) {
       return (
         <div className="userInfo">
@@ -47,11 +52,9 @@ var Discovery = React.createClass({
             <span className="glyphicon glyphicon-star" aria-hidden="true"></span>
             <span className="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
           </div>
-          <h5 className="userFee">{index.fee}</h5>
+          <h5 className="userFee">${index.fee.toFixed(2)} / min</h5>
           <div className="userSkills">
-            <span>JQUERY</span>
-            <span>CSS</span>
-            <span>HTML</span>
+            {index.skills.map(skillNodes)}
           </div>
           <p className="userBio">All this fancy schmancy stuff about this person.</p>
           <Link to="room"><button className="connectButton">CONNECT NOW</button></Link>
@@ -69,6 +72,7 @@ var Discovery = React.createClass({
           <h2>minutes.</h2>
           <input type="submit" value="GO" className="querySubmit" />
         </form>
+        <hr />
         {this.state.searchResults.map(userBlock)}
       </div>
    );

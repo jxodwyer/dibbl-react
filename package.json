@@ -65,6 +65,8 @@
     "react-addons-test-utils": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-router": "^0.13.5",
-    "sass-loader": "^1.0.1"
+    "react-stripe-checkout": "^1.7.2",
+    "sass-loader": "^1.0.1",
+    "stripe": "^4.0.0"
   }
 }

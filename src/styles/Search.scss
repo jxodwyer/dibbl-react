@@ -63,7 +63,7 @@
       float: right;
       display: inline-block;
     }
-    .userSkills { margin-top: 10px; }
+    .userSkills { margin-top: 10px; margin-bottom: 10px; }
     .userSkills span {
       background-color: white;
       padding: 5px;
@@ -71,6 +71,7 @@
       font-size: 10px;
       text-transform: uppercase;
     }
+    .userBio { font-size: 12px; }
     .connectButton {
       background-color: #66cccc;
       width: 100%;
@@ -78,7 +79,8 @@
       border: none;
       box-shadow: none;
       color: white;
-      padding: 10px 20px; }
+      padding: 10px 20px;
+    }
     .connectButton:hover { background-color: #fbb03b; }
     .bookLater { text-align: center; width: 100%; }
   }
