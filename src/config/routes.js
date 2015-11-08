@@ -19,7 +19,7 @@ var routes = (
     <Route name="register" handler={Register} />
     <Route name="account" handler={Account} />
     <Route name="discovery" handler={Discovery} />
-    <Route name="room" path="room" handler={Room} />
+    <Route name="room/:recipient" path="room" handler={Room} />
     <Route name="home" path="/" handler={Home} />
   </Route>
 );

@@ -54,7 +54,7 @@ var Discovery = React.createClass({
             <span>HTML</span>
           </div>
           <p className="userBio">All this fancy schmancy stuff about this person.</p>
-          <Link to="room"><button className="connectButton">CONNECT NOW</button></Link>
+          <Link to="room" params={{ recipient: index.key() }} ><button className="connectButton">CONNECT NOW</button></Link>
           <p className="bookLater"><a>or, schedule a call for later >></a></p>
         </div>
       )
