@@ -1,0 +1,85 @@
+#search {
+
+  #searchForm {
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    h2 {
+      color: #888;
+      font-size: 14px;
+      display:inline-block;
+    }
+    .gray-box {
+      border: none;
+      font-size: 14px;
+      color: #000;
+      background-color: #fafafa;
+      padding: 5px 10px;
+      margin: 0 10px;
+    }
+    #query {
+      margin: 0 10px 0 0 !important;
+      max-width: 40%;
+    }
+    input[type='number'] {
+      border: none;
+      color: transparent;
+      text-shadow: 0 0 0 black;
+      text-align: center;
+      padding-right: 5px;
+    }
+    .querySubmit {
+      width: 100px;
+      background-color: #d9e021;
+      font-size: 16px;
+      margin-top: 10px;
+      color: white;
+      margin-left: 20px;
+    }
+    .querySubmit:hover { background-color: #66cccc; }
+  }
+
+  .userInfo {
+    background-color: #fafafa;
+    padding: 20px;
+    text-align: left;
+    margin-bottom: 10px;
+    .faveIcon {
+      display: inline-block;
+      color: #66cccc;
+      margin-right: 5px;
+    }
+    .userName {
+      text-transform: uppercase;
+      color: #888;
+      display: inline-block;
+    }
+    .rating {
+      display: inline-block;
+      color: #ffcc00;
+      margin-left: 5px;
+    }
+    .userFee {
+      float: right;
+      display: inline-block;
+    }
+    .userSkills { margin-top: 10px; }
+    .userSkills span {
+      background-color: white;
+      padding: 5px;
+      margin-right: 5px;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+    .connectButton {
+      background-color: #66cccc;
+      width: 100%;
+      margin: 5px 0;
+      border: none;
+      box-shadow: none;
+      color: white;
+      padding: 10px 20px; }
+    .connectButton:hover { background-color: #fbb03b; }
+    .bookLater { text-align: center; width: 100%; }
+  }
+}

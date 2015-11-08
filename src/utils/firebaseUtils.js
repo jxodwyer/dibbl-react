@@ -2,10 +2,11 @@ var Firebase = require('firebase');
 var forge = "https://dibbl.firebaseio.com/"; //YOUR FIREBASE URL HERE
 var ref = new Firebase(forge);
 var cachedUser = null;
+var searchResults = [];
 
 var addNewUserToFB = function(newUser){
   var key = newUser.uid;
-  ref.child('user').child(key).set(newUser);
+  ref.child('users').child(key).set(newUser);
 };
 
 var firebaseUtils = {
