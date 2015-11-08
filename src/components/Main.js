@@ -17,14 +17,6 @@ var Main = React.createClass({
   },
   componentWillMount: function(){
     firebaseUtils.onChange = this.handleLogout;
-    // var users = [];
-    // this.firebaseRef = new Firebase("https://dibbl.firebaseio.com/users");
-    // this.firebaseRef.on("child_added", function(snapshot) {
-    //   this.users.push(snapshot.val());
-    //   this.setState({
-    //     users: this.users
-    //   });
-    // }.bind(this));
   },
   render: function(){
     var loginOrOut;
@@ -45,7 +37,7 @@ var Main = React.createClass({
             </div>
             <ul className="nav navbar-nav pull-right">
               <li><Link to="home" className="navbar-brand"> Home </Link></li>
-              <li><Link to="dashboard" className="navbar-brand"> Dashboard </Link></li>
+              <li><Link to="discovery" className="navbar-brand"> Discovery </Link></li>
               {register}
               {loginOrOut}
             </ul>

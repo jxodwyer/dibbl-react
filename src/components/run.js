@@ -6,5 +6,5 @@ import routes from '../config/routes';
 
 // Render the main component into the dom
 Router.run(routes, function(Handler){
-  React.render(<Handler /> , document.getElementById('app'));
+  ReactDOM.render(<Handler /> , document.getElementById('app'));
 });

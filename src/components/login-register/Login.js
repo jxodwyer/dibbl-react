@@ -1,6 +1,7 @@
 var React = require('react');
 var Router = require('react-router');
 var firebaseUtils = require('../../utils/firebaseUtils');
+
 var Login = React.createClass({
   mixins: [Router.Navigation],
   statics: {
@@ -21,7 +22,7 @@ var Login = React.createClass({
         Login.attemptedTransition = null;
         transition.retry();
       } else {
-        this.replaceWith('dashboard');
+        this.replaceWith('discovery');
       }
     }.bind(this));
   },
