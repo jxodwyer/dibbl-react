@@ -1,6 +1,7 @@
 var React = require('react');
 var Authenticated = require('../../utils/authenticated');
 var Router = require('react-router');
+var Link = Router.Link;
 var Firebase = require('firebase');
 var forge = "https://dibbl.firebaseio.com/"; //YOUR FIREBASE URL HERE
 var ref = new Firebase(forge);
@@ -53,7 +54,7 @@ var Discovery = React.createClass({
             <span>HTML</span>
           </div>
           <p className="userBio">All this fancy schmancy stuff about this person.</p>
-          <button className="connectButton">CONNECT NOW</button>
+          <Link to="room"><button className="connectButton">CONNECT NOW</button></Link>
           <p className="bookLater"><a>or, schedule a call for later >></a></p>
         </div>
       )
