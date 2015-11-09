@@ -4,9 +4,7 @@ var React = require('react'),
     Link = Router.Link,
     firebaseUtils = require('../utils/firebaseUtils');
 
-
-
-class HeaderComponent extends ReactComponent {
+class HeaderComponent extends React.Component {
 
   constructor(props) {
     super(props);
@@ -56,4 +54,6 @@ class HeaderComponent extends ReactComponent {
   }
 }
 
-module.exports = Header;
+HeaderComponent.displayName = 'HeaderComponent';
+
+export default HeaderComponent;
