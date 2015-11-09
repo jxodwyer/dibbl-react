@@ -1,24 +1,27 @@
-var React = require('react');
-var Router = require('react-router');
-var RouteHandler = Router.RouteHandler;
-var Link = Router.Link;
-var firebaseUtils = require('../utils/firebaseUtils');
+var React = require('react'),
+    Router = require('react-router'),
+    RouteHandler = Router.RouteHandler,
+    Link = Router.Link,
+    firebaseUtils = require('../utils/firebaseUtils');
 
-var Header = React.createClass({
-  getInitialState: function(){
-    return {
-      loggedIn: firebaseUtils.isLoggedIn()
-    }
-  },
-  handleLogout: function(loggedIn){
-    this.setState({
-      loggedIn: loggedIn
-    });
-  },
-  componentWillMount: function(){
+
+
+class HeaderComponent extends ReactComponent {
+
+  constructor(props) {
+    super(props);
+    this.state = {loggedIn: firebaseUtils.isLoggedIn()};
+  }
+
+  handleLogout(loggedIn) {
+    this.setState({loggedIn: loggedIn});
+  }
+
+  componentWillMount() {
     firebaseUtils.onChange = this.handleLogout;
-  },
-  render: function(){
+  }
+
+  render() {
     var loginOrOut;
     var register;
     var account;
@@ -51,6 +54,6 @@ var Header = React.createClass({
       </nav>
     )
   }
-});
+}
 
 module.exports = Header;
