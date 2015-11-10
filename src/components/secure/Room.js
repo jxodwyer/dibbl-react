@@ -2,35 +2,46 @@
 
 import React from 'react';
 
+var Firebase = require('firebase');
+var forge = "https://dibbl.firebaseio.com/"; //YOUR FIREBASE URL HERE
+var ref = new Firebase(forge);
 require('styles/secure/Room.scss');
 
 class RoomComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {ticker: 0};
+    this.state = {ticker: 0, callId: ''};
     setInterval(this.counter.bind(this), 1000);
   }
 
   counter() {
-    var newTicker = this.state.ticker + 1;
-    this.setState({ticker: newTicker});
+    this.setState({ticker: this.state.ticker + 1});
   }
 
   componentDidMount() {
+    this.createCallId();
+  }
+
+  createCallId() {
+    var newCallId = ref.child('calls').push({
+      startedAt: Firebase.ServerValue.TIMESTAMP,
+    });
+    this.setState({callId: newCallId.key()});
+    this.joinCall();
+  }
+
+  joinCall(){
     var webrtc = new SimpleWebRTC({
-      // the id/element dom element that will hold "our" video
       localVideoEl: 'localVideo',
-      // the id/element dom element that will hold remote videos
       remoteVideosEl: 'remoteVideos',
-      // immediately ask for camera access
       autoRequestMedia: true
     });
 
     webrtc.on('readyToCall', function () {
-      // you can name it anything
-      webrtc.joinRoom('your awesome room name');
-    });
+      webrtc.joinRoom(this.state.callId);
+      console.log('joined #', this.state.callId);
+    }.bind(this));
   }
 
   render() {

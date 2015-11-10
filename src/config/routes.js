@@ -10,6 +10,7 @@ var Account = require('../components/secure/Account');
 var Discovery = require('../components/secure/Discovery');
 var Room = require("../components/secure/Room");
 var Home = require("../components/Home");
+var Header = require("../components/Header");
 
 
 var routes = (
@@ -21,6 +22,7 @@ var routes = (
     <Route name="discovery" handler={Discovery} />
     <Route name="room" path="room" handler={Room} />
     <Route name="home" path="/" handler={Home} />
+    <Route name="header" handler={Header} />
   </Route>
 );
 
