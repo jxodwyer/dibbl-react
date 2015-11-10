@@ -1,8 +1,8 @@
-var React = require('react'),
-    Router = require('react-router'),
-    RouteHandler = Router.RouteHandler,
-    Link = Router.Link,
-    firebaseUtils = require('../utils/firebaseUtils');
+import React from 'react';
+import Router from 'react-router';
+import firebaseUtils from '../utils/firebaseUtils';
+var RouteHandler = Router.RouteHandler;
+var Link = Router.Link;
 
 class HeaderComponent extends React.Component {
 
