@@ -1,8 +1,10 @@
-var React = require('react');
-var Authenticated = require('../../utils/authenticated');
-var Router = require('react-router');
+import React from 'react';
+import Authenticated from '../../utils/authenticated';
+import Router from 'react-router';
+import Firebase from 'firebase';
+
+
 var Link = Router.Link;
-var Firebase = require('firebase');
 var forge = "https://dibbl.firebaseio.com/"; //YOUR FIREBASE URL HERE
 var ref = new Firebase(forge);
 require('normalize.css');
